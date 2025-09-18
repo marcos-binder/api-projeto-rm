@@ -15,6 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CampanhasController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
+const campanhas_service_1 = require("./campanhas.service");
+const create_campanha_dto_1 = require("./dto/create-campanha.dto");
+const update_campanha_dto_1 = require("./dto/update-campanha.dto");
 const response_campanha_dto_1 = require("./dto/response-campanha.dto");
 let CampanhasController = class CampanhasController {
     constructor(campanhasService) {
@@ -63,8 +66,9 @@ __decorate([
         status: 400,
         description: "Dados inválidos",
     }),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Function]),
+    __metadata("design:paramtypes", [create_campanha_dto_1.CreateCampanhaDto]),
     __metadata("design:returntype", void 0)
 ], CampanhasController.prototype, "create", null);
 __decorate([
@@ -179,8 +183,9 @@ __decorate([
         description: "Dados inválidos",
     }),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Function]),
+    __metadata("design:paramtypes", [String, update_campanha_dto_1.UpdateCampanhaDto]),
     __metadata("design:returntype", void 0)
 ], CampanhasController.prototype, "update", null);
 __decorate([
@@ -208,6 +213,6 @@ __decorate([
 exports.CampanhasController = CampanhasController = __decorate([
     (0, swagger_1.ApiTags)("campanhas"),
     (0, common_1.Controller)("campanhas"),
-    __metadata("design:paramtypes", [Function])
+    __metadata("design:paramtypes", [campanhas_service_1.CampanhasService])
 ], CampanhasController);
 //# sourceMappingURL=campanhas.controller.js.map

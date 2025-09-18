@@ -1,6 +1,6 @@
-import type { CampanhasService } from "./campanhas.service";
-import type { CreateCampanhaDto } from "./dto/create-campanha.dto";
-import type { UpdateCampanhaDto } from "./dto/update-campanha.dto";
+import { CampanhasService } from "./campanhas.service";
+import { CreateCampanhaDto } from "./dto/create-campanha.dto";
+import { UpdateCampanhaDto } from "./dto/update-campanha.dto";
 export declare class CampanhasController {
     private readonly campanhasService;
     constructor(campanhasService: CampanhasService);

@@ -1,8 +1,8 @@
-import { Controller, Get, Post, Patch, Param, Delete, Query, HttpCode, HttpStatus } from "@nestjs/common"
+import { Controller, Get, Post, Patch, Param, Delete, Query, HttpCode, HttpStatus, Body } from "@nestjs/common"
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery } from "@nestjs/swagger"
-import type { CampanhasService } from "./campanhas.service"
-import type { CreateCampanhaDto } from "./dto/create-campanha.dto"
-import type { UpdateCampanhaDto } from "./dto/update-campanha.dto"
+import { CampanhasService } from "./campanhas.service"
+import { CreateCampanhaDto } from "./dto/create-campanha.dto"
+import { UpdateCampanhaDto } from "./dto/update-campanha.dto"
 import { ResponseCampanhaDto } from "./dto/response-campanha.dto"
 
 @ApiTags("campanhas")
@@ -25,7 +25,7 @@ export class CampanhasController {
     status: 400,
     description: "Dados inválidos",
   })
-  create(createCampanhaDto: CreateCampanhaDto) {
+  create(@Body() createCampanhaDto: CreateCampanhaDto) {
     return this.campanhasService.create(createCampanhaDto)
   }
 
@@ -132,7 +132,7 @@ export class CampanhasController {
     status: 400,
     description: "Dados inválidos",
   })
-  update(@Param('id') id: string, updateCampanhaDto: UpdateCampanhaDto) {
+  update(@Param('id') id: string, @Body() updateCampanhaDto: UpdateCampanhaDto) {
     return this.campanhasService.update(id, updateCampanhaDto)
   }
 

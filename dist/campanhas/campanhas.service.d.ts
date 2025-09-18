@@ -1,5 +1,5 @@
-import type { Model } from "mongoose";
-import type { CampanhaDocument } from "./schemas/campanha.schema";
+import { Model } from "mongoose";
+import { CampanhaDocument } from "./schemas/campanha.schema";
 import type { CreateCampanhaDto } from "./dto/create-campanha.dto";
 import type { UpdateCampanhaDto } from "./dto/update-campanha.dto";
 export declare class CampanhasService {

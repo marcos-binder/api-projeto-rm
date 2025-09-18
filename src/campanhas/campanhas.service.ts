@@ -1,16 +1,13 @@
 import { Injectable, NotFoundException, ConflictException } from "@nestjs/common"
-import type { Model } from "mongoose"
-import type { CampanhaDocument } from "./schemas/campanha.schema"
+import { InjectModel } from "@nestjs/mongoose"
+import { Model } from "mongoose"
+import { Campanha, CampanhaDocument } from "./schemas/campanha.schema"
 import type { CreateCampanhaDto } from "./dto/create-campanha.dto"
 import type { UpdateCampanhaDto } from "./dto/update-campanha.dto"
 
 @Injectable()
 export class CampanhasService {
-  private campanhaModel: Model<CampanhaDocument>
-
-  constructor(campanhaModel: Model<CampanhaDocument>) {
-    this.campanhaModel = campanhaModel
-  }
+  constructor(@InjectModel(Campanha.name) private campanhaModel: Model<CampanhaDocument>) {}
 
   async create(createCampanhaDto: CreateCampanhaDto): Promise<CampanhaDocument> {
     try {

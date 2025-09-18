@@ -10,12 +10,25 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const campanhas_module_1 = require("./campanhas/campanhas.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forRoot("mongodb://localhost:27017/campanhas-db"), campanhas_module_1.CampanhasModule],
+        imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
+            mongoose_1.MongooseModule.forRootAsync({
+                imports: [config_1.ConfigModule],
+                useFactory: async (configService) => ({
+                    uri: configService.get("MONGODB_URI"),
+                }),
+                inject: [config_1.ConfigService],
+            }),
+            campanhas_module_1.CampanhasModule,
+        ],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
