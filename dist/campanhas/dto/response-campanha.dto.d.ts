@@ -1,5 +1,5 @@
 export declare class ResponseCampanhaDto {
-    id: string;
+    _id: string;
     nomeCampanha: string;
     tipoCampanha: string;
     numeroAcao: string;

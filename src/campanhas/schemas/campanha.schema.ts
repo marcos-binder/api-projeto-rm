@@ -5,9 +5,6 @@ export type CampanhaDocument = Campanha & Document
 
 @Schema({ timestamps: true })
 export class Campanha {
-  @Prop({ required: true, unique: true })
-  id: string
-
   @Prop({ required: true })
   nomeCampanha: string
 

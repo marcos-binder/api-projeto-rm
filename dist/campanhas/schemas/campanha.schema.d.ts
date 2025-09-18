@@ -1,7 +1,6 @@
 import type { Document } from "mongoose";
 export type CampanhaDocument = Campanha & Document;
 export declare class Campanha {
-    id: string;
     nomeCampanha: string;
     tipoCampanha: string;
     numeroAcao: string;

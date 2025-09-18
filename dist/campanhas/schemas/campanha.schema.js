@@ -15,10 +15,6 @@ let Campanha = class Campanha {
 };
 exports.Campanha = Campanha;
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, unique: true }),
-    __metadata("design:type", String)
-], Campanha.prototype, "id", void 0);
-__decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
 ], Campanha.prototype, "nomeCampanha", void 0);

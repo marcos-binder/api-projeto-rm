@@ -16,11 +16,11 @@ class ResponseCampanhaDto {
 exports.ResponseCampanhaDto = ResponseCampanhaDto;
 __decorate([
     (0, swagger_1.ApiProperty)({
-        description: "ID único da campanha",
-        example: "CAMP001",
+        description: "ID único da campanha (MongoDB _id)",
+        example: "507f1f77bcf86cd799439011",
     }),
     __metadata("design:type", String)
-], ResponseCampanhaDto.prototype, "id", void 0);
+], ResponseCampanhaDto.prototype, "_id", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({
         description: "Nome da campanha",

@@ -17,15 +17,6 @@ class CreateCampanhaDto {
 exports.CreateCampanhaDto = CreateCampanhaDto;
 __decorate([
     (0, swagger_1.ApiProperty)({
-        description: "ID único da campanha",
-        example: "CAMP001",
-    }),
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CreateCampanhaDto.prototype, "id", void 0);
-__decorate([
-    (0, swagger_1.ApiProperty)({
         description: "Nome da campanha",
         example: "Campanha de Marketing Digital 2024",
     }),

@@ -3,14 +3,6 @@ import { IsString, IsNotEmpty, IsNumber, IsDateString, Min } from "class-validat
 
 export class CreateCampanhaDto {
   @ApiProperty({
-    description: "ID único da campanha",
-    example: "CAMP001",
-  })
-  @IsString()
-  @IsNotEmpty()
-  id: string
-
-  @ApiProperty({
     description: "Nome da campanha",
     example: "Campanha de Marketing Digital 2024",
   })

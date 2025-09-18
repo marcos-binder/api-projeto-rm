@@ -2,10 +2,10 @@ import { ApiProperty } from "@nestjs/swagger"
 
 export class ResponseCampanhaDto {
   @ApiProperty({
-    description: "ID único da campanha",
-    example: "CAMP001",
+    description: "ID único da campanha (MongoDB _id)",
+    example: "507f1f77bcf86cd799439011",
   })
-  id: string
+  _id: string
 
   @ApiProperty({
     description: "Nome da campanha",
